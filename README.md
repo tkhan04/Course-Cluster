@@ -284,7 +284,8 @@ For issues or questions:
 1. Check the H2 console for database state
 2. Review browser console for JavaScript errors
 3. Check Spring Boot logs for backend errors
+4. If you really get stuck, just email me @ khanta01@gettysburg.edu
 
 ---
 
-**Built with ❤️ for Database Systems × Scenic Design**
+**Built with ❤️ for my Database Systems × Scenic Design class** 
