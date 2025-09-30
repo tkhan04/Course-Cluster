@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorm Room Layout Designer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Dorm Room Layout Designer</h1>
+            <p>Database Systems × Scenic Design</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Left Panel: Controls -->
+            <div class="left-panel">
+                <section class="card">
+                    <h2>Room Setup</h2>
+                    <div class="form-group">
+                        <label>Room Name:</label>
+                        <input type="text" id="roomName" placeholder="My Dorm Room">
+                    </div>
+                    <div class="form-group">
+                        <label>Length (feet):</label>
+                        <input type="number" id="roomLength" value="15" min="8" max="30" step="0.5">
+                    </div>
+                    <div class="form-group">
+                        <label>Width (feet):</label>
+                        <input type="number" id="roomWidth" value="12" min="8" max="30" step="0.5">
+                    </div>
+                    <button class="btn btn-primary" onclick="createRoom()">Create Room</button>
+                    <button class="btn btn-secondary" onclick="loadRooms()">Load Existing Rooms</button>
+                </section>
+
+                <section class="card">
+                    <h2>Available Furniture</h2>
+                    <div id="objectsList" class="objects-list">
+                        <p class="loading">Loading furniture...</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Instructions</h2>
+                    <ul class="instructions">
+                        <li>Create a room or load an existing one</li>
+                        <li>Click on furniture to select it</li>
+                        <li>Click on the room canvas to place furniture</li>
+                        <li>Click on placed items to remove them</li>
+                        <li>All placements are saved automatically</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Right Panel: Canvas -->
+            <div class="right-panel">
+                <div class="canvas-container">
+                    <div class="canvas-header">
+                        <h3 id="currentRoomTitle">No Room Selected</h3>
+                        <div id="roomInfo"></div>
+                    </div>
+                    <canvas id="roomCanvas" width="800" height="600"></canvas>
+                    <div class="canvas-legend">
+                        <p><strong>Scale:</strong> <span id="scaleInfo">1 grid square = 1 foot</span></p>
+                        <p><strong>Selected:</strong> <span id="selectedObject">None</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
